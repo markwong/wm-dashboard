@@ -7,7 +7,6 @@ import NavBar from './NavBar';
 
 const Home = () => {
     const auth = useAuth();
-    console.log('Home()');
 
     if (!auth.isLoggedIn) {
         return <Login />

@@ -18,10 +18,11 @@ const Login = () => {
     }
 
     const handleSubmit = (e) => {
+        //console.log('handleSubmit() ====');
         e.preventDefault();
         const success = auth.login(username, password);
         setLoginSuccess(success);
-        console.log(`handleSubmit() : ${loginSuccess}`)
+        
     }
 
     return(

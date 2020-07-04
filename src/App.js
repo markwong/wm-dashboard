@@ -7,19 +7,17 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
+
 import { ProvideAuth } from './use-auth';
 
 import Home from './Home';
 import Login from './Login';
 import About from './About';
-import Logout from './Logout';
-
 
 const App = () => {
   return (
     <ProvideAuth>
-        <Router>
-
+      <Router>
         <Switch>
           <Route exact path="/">
             <Redirect to="/home" />
@@ -33,12 +31,8 @@ const App = () => {
           <Route  path="/login">
             <Login />
           </Route>
-          <Route  path="/logout">
-            <Logout />
-          </Route>
         </Switch>
       </Router>
-
     </ProvideAuth>
   );
 }

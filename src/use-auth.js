@@ -4,11 +4,13 @@ import React, {
 } from 'react';
 import { useLocalStorage } from './use-localstorage';
 
+
 const authContext = createContext();
 
 export const ProvideAuth = ({children}) => {
+    //console.log("================ In ProvideAuth()");
     const [isLoggedIn, setLoggedIn] = useLocalStorage("isLoggedIn", false);
-    
+    //const [isLoggedIn, setLoggedIn] = useState(false);
     const login = (username, password) => {
         if (username === "mark" && password === "mark") {
             setLoggedIn(true);
@@ -16,7 +18,7 @@ export const ProvideAuth = ({children}) => {
             setLoggedIn(false);
         }
 
-        console.log(`login() isLoggedIn=${isLoggedIn}`);
+        //console.log(`login() isLoggedIn=${isLoggedIn}`);
         return isLoggedIn;
     }
 
